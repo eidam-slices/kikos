@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Eidam - plátky</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .images {
+      display: flex;
+      gap: 20px; /* mezera mezi obrázky */
+      margin-top: 10px;
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adam R.</h1>
+    <p id="slovni-datum"></p>
+    <script>
+      const dny = [
+        "", "prvního", "druhýho", "třetího", "čtvrtýho", "pátýho",
+        "šestýho", "sedmýho", "osmýho", "devátýho", "desátýho",
+        "jedenáctýho", "dvanáctýho", "třináctýho", "čtrnáctýho", "patnáctýho",
+        "šestnáctýho", "sedmnáctýho", "osmnáctýho", "devatenáctýho", "dvacátýho",
+        "dvacátýho prvního", "dvacátýho druhýho", "dvacátýho třetího",
+        "dvacátýho čtvrtýho", "dvacátýho pátýho", "dvacátýho šestýho",
+        "dvacátýho sedmýho", "dvacátýho osmýho", "dvacátýho devátýho",
+        "třicátýho", "třicátýho prvního"
+      ];
+  
+      // Měsíc převedeme číslem na pořadové (šestého, sedmého...)
+      const mesiceCislem = [
+        "", "první", "druhý", "třetí", "čtvrtý", "pátý",
+        "šestý", "sedmý", "osmý", "devátý", "desátý", "jedenáctý", "dvacátý"
+      ];
+  
+      // Rok hardcoded (pro 2025)
+      const rokSlovne = "dva tisíce dvacet pět";
+  
+      const dnes = new Date();
+      const den = dnes.getDate();
+      const mesic = dnes.getMonth() + 1;
+      
+      const slovniDatum = `${dny[den]} ${mesiceCislem[mesic]}<br>${rokSlovne}`;
+      document.getElementById("slovni-datum").innerHTML = slovniDatum;
+    </script>
+    <h3>
+      EIDAM - 45 %<br>
+      (30 % albert asi nemá)
+    </h3>
+    <h2>
+      Gouda - 48 %.<br>
+      (doporučuju)
+    </h2>
+    <div class="images">
+      <img src="https://static.albert.cz/medias/sys_master/h34/haa/9008654286878.jpg" alt="Gouda">
+      <img src="https://static.albert.cz/medias/sys_master/hac/h62/9009347100702.jpg" alt="Eidam">
+    </div>
+  </div>
+</body>
+</html>
